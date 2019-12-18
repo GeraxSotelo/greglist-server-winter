@@ -7,7 +7,7 @@ const Job = new Schema(
     position: { type: String, required: true },
     location: { type: String, required: true },
     salary: { type: String },
-    description: { type: String, maxlength: 250 },
+    description: { type: String, maxlength: 250, default: "No Description" },
   },
   {
     timestamps: true,
