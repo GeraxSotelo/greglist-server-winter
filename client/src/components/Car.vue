@@ -1,5 +1,5 @@
 <template>
-  <div class="card car" :class="{ greyscale: carData.sold }" style="width: 18rem;">
+  <div class="car card" :class="{ greyscale: carData.sold }" style="width: 18rem;">
     <router-link :to="{ name: 'carDetails', params: { id: carData.id } }">
       <img :src="carData.imgUrl" class="card-img-top" />
       <div class="card-body">

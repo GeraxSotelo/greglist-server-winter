@@ -47,13 +47,16 @@
         </form>
       </div>
       <div class="row mt-3">
-        <div class="col-6 col-md-3" v-for="job in jobs" :key="job.id">{{job}}</div>
+        <div class="col-6 col-md-3" v-for="job in jobs" :key="job.id">
+          <job-component :jobData="job" />
+        </div>
       </div>
     </main>
   </div>
 </template>
 
 <script>
+import JobComponent from "@/components/Job";
 export default {
   name: "jobs",
   mounted() {
@@ -87,6 +90,9 @@ export default {
     jobs() {
       return this.$store.state.jobs;
     }
+  },
+  components: {
+    JobComponent
   }
 };
 </script>
