@@ -11,7 +11,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     cars: [],
-    activeCar: {}
+    activeCar: {},
+    jobs: []
   },
   mutations: {
     setAllCars(state, data) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
     },
     setActiveCar(state, car) {
       state.activeCar = car;
+    },
+    addJob(state, job) {
+      state.jobs.push(job)
     }
   },
   actions: {

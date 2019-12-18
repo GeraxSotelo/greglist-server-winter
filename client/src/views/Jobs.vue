@@ -53,6 +53,9 @@
 <script>
 export default {
   name: "jobs",
+  mounted() {
+    this.$store.dispatch("getJobs");
+  },
   data() {
     return {
       newJob: {
@@ -66,7 +69,7 @@ export default {
   },
   methods: {
     createJob() {
-      let job = { ...newJob };
+      let job = { ...this.newJob };
       this.$store.dispatch("createJob", job);
       this.newJob = {
         company: "",
