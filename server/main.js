@@ -4,6 +4,7 @@ import cors from "cors";
 import bp from "body-parser";
 import DbContext from "./db/dbConfig";
 import CarController from "./controllers/CarsController";
+import JobController from "./controllers/JobsController";
 
 const port = process.env.PORT || 3000;
 
@@ -19,7 +20,7 @@ server.use(express.static(__dirname + "/../client/dist"));
 //NOTE Allows requests from the port 8080, add additional addresses as needed
 var whitelist = ["http://localhost:8080"];
 var corsOptions = {
-  origin: function(origin, callback) {
+  origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
     callback(null, originIsWhitelisted);
   },
@@ -36,6 +37,7 @@ server.use(bp.json());
 //NOTE next we want to register all our routes(doorways that can be accessed in our app)
 
 server.use("/api/cars", new CarController().router);
+server.use("/api/jobs", new JobController().router);
 
 //NOTE Everything below this line always stays the same
 

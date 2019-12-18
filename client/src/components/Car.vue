@@ -1,10 +1,13 @@
 <template>
-  <div class="car" :class="{ greyscale: carData.sold }">
+  <div class="card car" :class="{ greyscale: carData.sold }" style="width: 18rem;">
     <router-link :to="{ name: 'carDetails', params: { id: carData.id } }">
-      <img :src="carData.imgUrl" alt="" />
-      <p>{{ carMakeUpperCase }} | {{ carData.model }}</p>
+      <img :src="carData.imgUrl" class="card-img-top" />
+      <div class="card-body">
+        <h5 class="card-title">{{ carMakeUpperCase }}</h5>
+        <p class="card-text">{{ carData.model }}</p>
+      </div>
     </router-link>
-    <button @click="sold">SOLD</button>
+    <button class="btn btn-primary" @click="sold">SOLD</button>
   </div>
 </template>
 

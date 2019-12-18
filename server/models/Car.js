@@ -7,7 +7,7 @@ const Car = new Schema(
     model: { type: String, required: true },
     price: { type: Number, required: true },
     year: { type: Number, max: 2040, min: 1800 },
-    imgUrl: { type: String },
+    imgUrl: { type: String, default: "//placehold.it/200x200" },
     description: { type: String, maxlength: 250 },
     sold: { type: Boolean, default: false }
   },
