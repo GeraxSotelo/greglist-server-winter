@@ -46,6 +46,9 @@
           <button class="btn btn-success" type="submit">Add Job</button>
         </form>
       </div>
+      <div class="row mt-3">
+        <div class="col-6 col-md-3" v-for="job in jobs" :key="job.id">{{job}}</div>
+      </div>
     </main>
   </div>
 </template>
@@ -78,6 +81,11 @@ export default {
         salary: null,
         description: ""
       };
+    }
+  },
+  computed: {
+    jobs() {
+      return this.$store.state.jobs;
     }
   }
 };

@@ -26,6 +26,9 @@ export default new Vuex.Store({
     },
     addJob(state, job) {
       state.jobs.push(job)
+    },
+    setAllJobs(state, data) {
+      state.jobs = data;
     }
   },
   actions: {
@@ -51,6 +54,11 @@ export default new Vuex.Store({
     async createJob({ commit, dispatch }, job) {
       let res = await _api.post("jobs", job)
       commit("addJob", res.data)
+    },
+
+    async getJobs({ commit, dispatch }) {
+      let res = await _api.get("jobs");
+      commit("setAllJobs", res.data);
     }
   }
 });
