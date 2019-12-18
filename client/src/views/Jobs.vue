@@ -46,9 +46,11 @@
           <button class="btn btn-success" type="submit">Add Job</button>
         </form>
       </div>
-      <div class="row mt-3">
-        <div class="col-6 col-md-3" v-for="job in jobs" :key="job.id">
-          <job-component :jobData="job" />
+      <div class="col-12">
+        <div class="row mt-3">
+          <div class="col-6 col-md-3" v-for="job in jobs" :key="job.id">
+            <job-component :jobData="job" />
+          </div>
         </div>
       </div>
     </main>
