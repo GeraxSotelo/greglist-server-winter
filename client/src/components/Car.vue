@@ -3,6 +3,7 @@
     <router-link :to="{ name: 'carDetails', params: { id: carData.id } }">
       <img :src="carData.imgUrl" class="card-img-top" />
       <div class="card-body">
+        <p class="card-text">{{ carData.year }}</p>
         <h5 class="card-title">{{ carMakeUpperCase }}</h5>
         <p class="card-text">{{ carData.model }}</p>
       </div>

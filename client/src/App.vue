@@ -15,10 +15,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li id="home-link" class="nav-item">
             <router-link class="nav-link" :to="{ name: 'home' }">Cars</router-link>
           </li>
-          <li class="nav-item">
+          <li id="jobs-link" class="nav-item">
             <router-link class="nav-link" :to="{ name: 'jobs' }">Jobs</router-link>
           </li>
           <li class="nav-item">
