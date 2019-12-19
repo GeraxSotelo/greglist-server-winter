@@ -6,7 +6,7 @@
       </div>
     </header>
     <main class="row search">
-      <div class="col-12 col-md-4 mx-auto">
+      <div class="col-12 col-md-4 mb-3 mx-auto">
         <form @submit.prevent="createJob" class="text-left">
           <div class="form-group">
             <label>Company</label>
@@ -46,7 +46,7 @@
           <button class="btn btn-success" type="submit">Add Job</button>
         </form>
       </div>
-      <div class="col-12">
+      <div class="col-12 classifieds">
         <div class="row mt-3">
           <div class="col-6 col-md-3" v-for="job in jobs" :key="job.id">
             <job-component :jobData="job" />
@@ -99,4 +99,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.classifieds {
+  background: url("http://www.lantidote-paris.com/wp-content/uploads/2013/04/bg-1.jpg")
+    no-repeat center;
+}
+.card {
+  border: 2px solid black;
+}
+</style>

@@ -50,7 +50,7 @@ export default new Vuex.Store({
       await _api.delete("cars/" + id);
       dispatch("getCars");
     },
-
+    /********************JOBS********************/
     async createJob({ commit, dispatch }, job) {
       let res = await _api.post("jobs", job)
       commit("addJob", res.data)
