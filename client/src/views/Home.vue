@@ -45,7 +45,7 @@
       </div>
       <div class="col-12 mt-4">
         <div class="row cars">
-          <div class="col-6 col-md-3" v-for="car in cars" :key="car.id">
+          <div v-show="car.sold == false" class="col-6 col-md-3" v-for="car in cars" :key="car.id">
             <!-- Props are data passed from parent to child with :propName="DATA" -->
             <car-component :carData="car" />
           </div>

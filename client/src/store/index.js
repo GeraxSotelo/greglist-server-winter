@@ -12,7 +12,8 @@ export default new Vuex.Store({
   state: {
     cars: [],
     activeCar: {},
-    jobs: []
+    jobs: [],
+    activeJob: {}
   },
   mutations: {
     setAllCars(state, data) {
@@ -29,6 +30,10 @@ export default new Vuex.Store({
     },
     setAllJobs(state, data) {
       state.jobs = data;
+    },
+
+    setActiveJob(state, job) {
+      state.activeJob = job;
     }
   },
   actions: {
@@ -59,6 +64,11 @@ export default new Vuex.Store({
     async getJobs({ commit, dispatch }) {
       let res = await _api.get("jobs");
       commit("setAllJobs", res.data);
+    },
+
+    async getJobById({ commit, dispatch }, id) {
+      let res = await _api.get("jobs/" + id);
+      commit("setActiveJob", res.data)
     }
   }
 });

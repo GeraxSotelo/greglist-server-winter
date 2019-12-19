@@ -1,7 +1,7 @@
 <template>
   <div class="job card" style="width: 18rem;">
     <div class="card-body">
-      <router-link :to="{name: 'jobDetails', params: {id: jobData.id}}"">
+      <router-link :to="{name: 'jobDetails', params: {id: jobData.id}}">
         <h3 class="card-title">{{jobData.company}}</h3>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">

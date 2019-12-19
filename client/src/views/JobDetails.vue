@@ -5,10 +5,15 @@
 <script>
 export default {
   name: "JobDetails",
-  data() {
-    return {};
+  mounted() {
+    this.$store.dispatch("getJobById", this.$route.params.id);
   },
-  methods: {}
+  methods: {},
+  computed: {
+    jobs() {
+      return this.$store.state.activeCar;
+    }
+  }
 };
 </script>
 

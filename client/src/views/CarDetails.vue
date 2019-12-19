@@ -1,4 +1,4 @@
-<template class="bg-success">
+<template>
   <div class="car-details container-fluid">
     <header class="row">
       <div class="col">
